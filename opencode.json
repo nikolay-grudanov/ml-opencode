@@ -1,0 +1,97 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["~/.config/opencode/rules/*.md"],
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      ".git/**",
+      ".pytest_cache/**",
+      "__pycache__/**",
+      ".ruff_cache/**",
+      ".qwen/**"
+    ]
+  },
+  "permission": {
+    "read": {
+      ".env": "deny",
+      "*": "allow"
+    },
+    "edit": {
+      "*": "ask"
+    },
+    "bash": {
+      "*": "ask"
+    },
+    "task": {
+      "*": "deny"
+    },
+    "external_directory": {
+      "*": "ask"
+    }
+  },
+  "tools": {
+    "perplexity_*": false,
+    "repomix-mcp_*": false,
+    "jupyter_*": false,
+    "image_*": false,
+    "think-mcp_search": false,
+    "webfetch": false,
+    "websearch": false,
+    "duckduckgo-mcp-*": false,
+    "context7_*": false,
+    "arxiv-mcp-*": false
+
+  },
+  "mcp": {
+    "context7": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ],
+      "enabled": true
+    },
+    "repomix-mcp": {
+      "type": "local",
+      "command": ["npx", "-y", "repomix", "--mcp"],
+      "enabled": true
+    },
+    "think-mcp": {
+      "type": "local",
+      "command": ["think-mcp", "--advanced"],
+      "enabled": true
+    },
+    "duckduckgo-mcp-server": {
+      "type": "local",
+      "command": ["duckduckgo-mcp-server"],
+      "enabled": true
+    },
+    "perplexity": {
+      "type": "local",
+      "command": ["npx", "-y", "@perplexity-ai/mcp-server"],
+      "enabled": true,
+      "environment": {
+        "PERPLEXITY_API_KEY": "my_token_123"
+      }
+    },
+    "arxiv-mcp-server": {
+      "type": "local",
+      "command": ["uv", "tool", "run", "arxiv-mcp-server"],
+      "enabled": true
+    },
+    "jupyter": {
+      "type": "local",
+      "command": ["jupyter-mcp-server"],
+      "enabled": true,
+      "environment": {
+        "RUNTIME_URL": "http://pc-mnj:8888",
+        "RUNTIME_TOKEN": "my_token_123",
+        "DOCUMENT_URL": "http://pc-mnj:8888",
+        "DOCUMENT_TOKEN": "my_token_123",
+        "ALLOW_IMG_OUTPUT": "true"
+      }
+    }
+  }
+}
