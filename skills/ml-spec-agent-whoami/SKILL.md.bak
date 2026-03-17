@@ -1,3 +1,7 @@
+---
+name: ml-spec-agent-whoami
+description: Whoami skill for ml-spec-agent - ML specification specialist. Defines role: create technical specifications, define requirements, architecture, metrics. Use when starting new ML projects or clarifying requirements. Load at first message, work with ml-theory-agent.
+---
 # Whoami: ML Spec Agent
 
 **Полная спецификация агента ml-spec-agent**
@@ -199,6 +203,87 @@ other_params: [...]
 - Device: [CPU / GPU / TPU]
 - Training time estimate: ~[hours]
 
+
+## Структура ML Спецификации
+
+### Стандартная структура (на основе MLOps Principles и Cookiecutter Data Science):
+
+```
+## 1. Введение
+- Цели проекта
+- Scope и ограничения
+- Стейкхолдеры
+
+## 2. Понимание бизнеса и данных
+- Описание проблемы
+- Доступные данные (источники, объем, качество)
+- Use cases
+
+## 3. Требования
+### 3.1 Функциональные
+- Что должна делать модель
+- Входные данные
+- Выходные данные
+
+### 3.2 Нефункциональные
+- Latency (< 100ms)
+- Accuracy (> 85%)
+- Scalability
+- GDPR Compliance
+- Fairness constraints
+
+## 4. Метрики успеха
+### 4.1 ML метрики
+- Primary: F1-score, AUC-ROC
+- Secondary: Precision, Recall
+- Baseline target
+
+### 4.2 Бизнес-метрики
+- Revenue impact
+- User engagement
+- Churn reduction
+
+## 5. Архитектура
+### 5.1 Data Pipeline
+- Источники данных
+- Preprocessing steps
+- Feature store
+
+### 5.2 Model Architecture
+- Алгоритмы (baseline и candidate models)
+- Hyperparameters
+- Training strategy
+
+### 5.3 Serving
+- Deployment strategy (REST API, batch)
+- Infrastructure requirements
+
+## 6. Тестирование и валидация
+- Data validation tests
+- Model validation (cross-validation, holdout)
+- Fairness tests
+- Performance benchmarks
+
+## 7. Версионирование и воспроизводимость
+- Git  DVC для data/code/models
+- Environment specification
+- Random seeds
+
+## 8. Мониторинг
+- Data drift detection
+- Model decay metrics
+- Performance alerts
+- Retraining triggers
+
+## 9. Риски и mitigation
+- Technical risks
+- Business risks
+- Rollback план
+
+## 10. Приложения
+- Экспериментальный лог
+- Дополнительные материалы
+```
 ---
 
 ## 4. Evaluation

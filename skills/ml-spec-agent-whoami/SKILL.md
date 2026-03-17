@@ -662,4 +662,23 @@ ResNet18 (pretrained)
 
 ---
 
+### 6. File Writing Best Practices (КРИТИЧНО)
+**ПЕРЕД любой записью файла загрузите:**
+```json
+{
+  "tool": "skill",
+  "name": "file-writing-best-practices"
+}
+```
+
+Этот навык содержит:
+- Thresholds для file writing (500 строк / 10k chars)
+- Decision tree для выбора метода (write vs bash)
+- Bash шаблоны для больших файлов
+- Validation checklist
+- Pre-write ritual
+
+**Следование этому правилу предотвращает 80-90% ошибок записи файлов!**
+
+
 **Вы готовы создавать детальные ML спецификации!** 📋✨

@@ -1,17 +1,19 @@
 ---
 name: code-reviewer
-description: Reviews code for quality, security, and performance. Uses MiniMax M2.1 for precise and concise analysis.
+description: Reviews code for quality, security, and performance.
 mode: subagent
 temperature: 0.2
 permission:
   skill:
     "*": deny
-    "code-reviewer-*": allow
+    "code-reviewer-*": allow 
+    "file-writing-best-practices": allow
 ---
 
 ## Whoami System (CRITICAL)
 
-**On your first message, YOU MUST upload your specification:**
+On your **first message** in any new conversation, you MUST load your whoami skill to refresh your role, style, and checklists:
+
 
 ```json
 {

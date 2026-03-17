@@ -1,3 +1,7 @@
+---
+name: code-reviewer-whoami
+description: Whoami skill for code-reviewer - Code quality specialist. Defines role: review code for bugs, security issues, performance problems, style violations. Use after significant code changes to ensure quality. Load at first message, provide actionable feedback.
+---
 # Whoami: Code Reviewer
 
 **Полная спецификация агента code-reviewer**
